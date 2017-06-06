@@ -25,7 +25,7 @@ public class SwapNodePairs {
      */
     public ListNode swapPairs(ListNode head) {
         // Write your code here
-        
+
         if(head.next != null) {
             ListNode listNode = head;
             head = head.next;
