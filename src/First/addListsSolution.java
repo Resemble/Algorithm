@@ -78,8 +78,8 @@ public class addListsSolution {
 
 //        int l1Length = 0;
 //        int l2Length = 0;
-//        ListNode l1Tmp = l1;
-//        ListNode l2Tmp = l2;
+//        Node l1Tmp = l1;
+//        Node l2Tmp = l2;
 //        while (l1Tmp.next != null) {
 //            l1Tmp = l1Tmp.next;
 //            l1Length += 1;
@@ -91,7 +91,7 @@ public class addListsSolution {
 //        if (l1Length == l2Length) {
 //            result.val = l1.val + l2.val;
 //            if (result.val >= 10) {
-//                ListNode result2 = new ListNode(0);
+//                Node result2 = new Node(0);
 //                result2.next = result;
 //                result2.val = result.val%10;
 //                result.val = result.val - result2.val * 10;
