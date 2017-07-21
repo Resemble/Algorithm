@@ -42,6 +42,6 @@ public class SelectSortTest {
             System.out.println(array[i]);
         }
         endTime = System.nanoTime();
-        System.out.println(String.format("this take %s ns", (endTime-startTime)));
+        System.out.println(String.format("this take %s ns", (endTime-startTime))); // this take 438773 ns
     }
 }
