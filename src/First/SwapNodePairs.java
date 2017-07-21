@@ -20,8 +20,8 @@ public class SwapNodePairs {
     }
 
     /**
-     * @param head a ListNode
-     * @return a ListNode
+     * @param head a Node
+     * @return a Node
      */
     public ListNode swapPairs(ListNode head) {
         // Write your code here
