@@ -36,7 +36,7 @@ public class InsertSortTest {
             System.out.println(array[i]);
         }
         endTime = System.nanoTime();
-        System.out.println(String.format("this take %s ns", (endTime - startTime))); //
+        System.out.println(String.format("this take %s ns", (endTime - startTime)));
     }
 
 
