@@ -42,7 +42,7 @@ public class QuickSortTest2 {
         long startTime;
         long endTime;
         startTime = System.nanoTime();
-        int array[] = getArray(2300);
+        int array[] = getRandomArray(2300);
         quickSort(array);
         System.out.println("length:" + array.length);
         for (int i = 0; i < array.length; i++) {
@@ -54,7 +54,7 @@ public class QuickSortTest2 {
 
 
 
-    public static int[] getArray (int length) {
+    public static int[] getRandomArray(int length) {
         int array[] = new int[length];
         for (int i = 0; i < length; i++) {
             ThreadLocalRandom threadLocalRandom = ThreadLocalRandom.current();
