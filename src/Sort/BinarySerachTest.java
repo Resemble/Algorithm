@@ -5,10 +5,10 @@ package Sort;
  * @version V1.0
  * @Title:
  * @Package Sort
- * @Description:
+ * @Description: 递归实现
  * @date 2017/7/30 21:49
  */
-public class MidGetTest {
+public class BinarySerachTest {
 
     public static int getIndexOfNumByMid(int array[], int low, int high, int num) {
         if (num > array[high] || num < array[low]) {
