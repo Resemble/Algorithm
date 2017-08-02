@@ -10,7 +10,7 @@ import java.util.Scanner;
  * @Description: 数组中取三个数相乘最大
  * @date 2017/8/1 20:44
  */
-public class Get3NumsMutilMaxSolution {
+public class Get3NumsMultiMaxSolution {
 
     public static long getMax(long[] array) {
         long max1 = Long.MIN_VALUE;
