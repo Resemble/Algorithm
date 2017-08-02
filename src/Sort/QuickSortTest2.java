@@ -42,7 +42,8 @@ public class QuickSortTest2 {
         long startTime;
         long endTime;
         startTime = System.nanoTime();
-        int array[] = getRandomArray(2300);
+        int array[] = {3, 34, 43, 2, 543, 23, 13, 324};
+//        int array[] = getRandomArray(2300);
         quickSort(array);
         System.out.println("length:" + array.length);
         for (int i = 0; i < array.length; i++) {

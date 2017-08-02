@@ -26,7 +26,7 @@ public class MergeSortTest {
         }
         // 2个都遍历完，排序
         for(k = p, i = 0, j = 0; i < n1 && j < n2; k++) {
-            if(L[i] > R[j]) {
+            if(L[i] < R[j]) {
                 array[k] = L[i];
                 i++;
             } else {
