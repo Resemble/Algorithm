@@ -28,6 +28,7 @@ public class MergeSortTest2 {
     }
 
     private static void merge(int[] arr, int low, int mid, int high, int[] helper) {
+        // 这个一定放在这里，因为归并过程有几次对同一个值操作，放在这里而且还只用一次
         for (int i = low; i <= high; i++) {
             helper[i] = arr[i];
         }
