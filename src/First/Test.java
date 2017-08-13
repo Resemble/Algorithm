@@ -88,6 +88,8 @@ public class Test {
         printArray(array);
         array = generatePositiveArray(29);
         printArray(array);
+
+
     }
 
     public static int[] generateArray(int size) {
@@ -111,5 +113,7 @@ public class Test {
         }
         System.out.println();
     }
+
+
 
 }
