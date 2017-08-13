@@ -12,11 +12,11 @@ package First;
  * 实现难度：一般
  * @date 2017/5/11 21:57
  */
-public class Singleton {
+public class Singleton {  // 外部类没有 static
    private static class SingletonHolder {
-       private static final Singleton INSTANCE = new Singleton();
+       private static final Singleton INSTANCE = new Singleton();  // 实例放在内部类里面了
    }
-   private Singleton(){}
+   private Singleton(){}  // 构造方法没有 static
    public static final Singleton getInstance() {
        return SingletonHolder.INSTANCE;
    }
