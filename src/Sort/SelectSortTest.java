@@ -5,7 +5,10 @@ package Sort;
  * @version V1.0
  * @Title:
  * @Package Sort
- * @Description: 选择排序
+ * @Description: 选择排序，每次在无序队列中“选择”出最小值，放到有序队列的最后，并从无序队列中去除该值
+ *
+ *    数据交换swap发生在while，for 等循环里面的是 『插入排序』，在循环外的，是『选择排序』。
+ *
  * @date 2017/7/21 10:47
  */
 public class SelectSortTest {

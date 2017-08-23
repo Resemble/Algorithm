@@ -5,7 +5,7 @@ package Sort;
  * @version V1.0
  * @Title:
  * @Package Sort
- * @Description: 冒泡排序
+ * @Description: 冒泡排序，2重循环，第二重循环不断交换到第一个
  * @date 2017/7/21 14:33
  */
 public class BubbleSortTest {

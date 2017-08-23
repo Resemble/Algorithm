@@ -5,7 +5,7 @@ package Sort;
  * @version V1.0
  * @Title:
  * @Package Sort
- * @Description:
+ * @Description: 插入排序，左边有序，依次往右，将右边那个插入到左边
  * @date 2017/7/21 11:02
  */
 public class InsertSortTest {
