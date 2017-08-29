@@ -29,7 +29,7 @@ public class QuickSortTest2 {
             }
             array[j] = array[i];
         }
-        array[j] = temp;
+        array[j] = temp;  // i j 都可以，此时 i j 相等
         sort(array, low, j - 1);
         sort(array, j + 1, high);
     }
