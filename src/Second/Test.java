@@ -36,7 +36,10 @@ public class Test {
             System.out.println("!d3.equals(d4)");
         }
 
-
+        for (int i = 0; i < 200 && i < 150; i++) {
+            System.out.println(i);
+//            if (i>100) break;
+        }
 
     }
 
