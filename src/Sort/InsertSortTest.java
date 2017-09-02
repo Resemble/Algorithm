@@ -11,18 +11,16 @@ package Sort;
 public class InsertSortTest {
 
     public static void insertSort(int[] a) {
-        if (a != null) {
-            for (int i = 1; i < a.length; i++) {
-                int temp = a[i], j = i;
-                if (a[j - 1] > temp) {
-                    // 依次往左对比，直到找到合适的位置
-                    while (j >= 1 && a[j - 1] > temp) {
-                        a[j] = a[j - 1];
-                        j--;
-                    }
+        for (int i = 1; i < a.length; i++) {
+            int temp = a[i], j = i;
+            if (a[j - 1] > temp) {
+                // 依次往左对比，直到找到合适的位置
+                while (j >= 1 && a[j - 1] > temp) {
+                    a[j] = a[j - 1];
+                    j--;
                 }
-                a[j] = temp;
             }
+            a[j] = temp;
         }
     }
 
