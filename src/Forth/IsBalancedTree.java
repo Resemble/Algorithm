@@ -1,4 +1,4 @@
-package Third;
+package Forth;
 
 
 /**
@@ -12,7 +12,7 @@ package Third;
 public class IsBalancedTree {
 
 
-    public static class TreeNode {
+    private static class TreeNode {
         public int val;
         public TreeNode left, right;
 
