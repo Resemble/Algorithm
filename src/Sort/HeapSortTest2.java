@@ -13,7 +13,7 @@ public class HeapSortTest2 {
 
     public static void myMaxHeapSort(int[] array) {
         int length = array.length;
-        // 构建堆
+        // 构建堆 整个构建堆的时间复杂度为O(n)
         for (int i = length / 2 - 1; i >= 0 ; i--) {              // 比如 0 1 2 3 4 5 6 7 8，这9个数 9 / 2 - 1 = 3，只有 0 1 2 3 才有子节点
             adjustMaxHeapSort(array, i, length-1);
         }
