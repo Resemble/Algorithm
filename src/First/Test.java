@@ -89,6 +89,16 @@ public class Test {
         array = generatePositiveArray(29);
         printArray(array);
 
+        String string2 = "22:234:34:234";
+        String[] temp1 = string2.split(":");
+        String[] temp2 = string2.split(".");
+        if (temp1.length == 4) {
+            System.out.println(4);
+        } else if (temp2.length == 6) {
+            System.out.println(6);
+        }
+
+
 
     }
 
