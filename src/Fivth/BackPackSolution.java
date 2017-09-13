@@ -19,18 +19,37 @@ package Fivth;
  */
 public class BackPackSolution {
 
-    public int backPack(int m, int[] A) {
-        // write your code here
-        int[][] dp = new int[A.length + 1][m + 1];
-        for (int i = 1; i <= A.length; i++) {
-            for (int j = 0; j <= m; j++) {
-                if (j >= A[i - 1]) {
-                    dp[i][j] = dp[i - 1][j - A[i - 1]] + A[i - 1];
+    public static void main(String[] args) {
+        int[] A = {3, 4, 8, 5};
+        int m = 10;
+        System.out.println(backPack(m, A));
+    }
+
+    public static int backPack(int m, int[] A) {
+        int[] P = new int[m + 1];
+        for (int i = 0; i < A.length; i++) {
+            for (int j = m; j >= 1; j--) {  // 从0到m可能放2次相同的，倒着就不会了 大的用到小的值了
+                if (j >= A[i]) {
+                    P[j] = Math.max(P[j], P[j - A[i]] + A[i]);
                 }
-                dp[i][j] = Math.max(dp[i][j], dp[i - 1][j]);
             }
         }
-        return dp[A.length][m];
+        return P[m];
+    }
+
+
+    public static int backPack1(int m, int[] A) {
+        // write your code here
+        int[][] P = new int[A.length + 1][m + 1];
+        for (int i = 1; i <= A.length; i++) {
+            for (int j = 1; j <= m; j++) {  // 1 到 m
+                if (j >= A[i - 1]) {
+                    P[i][j] = P[i - 1][j - A[i - 1]] + A[i - 1];
+                }
+                P[i][j] = Math.max(P[i][j], P[i - 1][j]);
+            }
+        }
+        return P[A.length][m];
     }
 
 }
