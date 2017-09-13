@@ -41,6 +41,11 @@ public class Test {
 //            if (i>100) break;
         }
 
+        int m = 2;
+        int n = 10;
+        System.out.println(++m*n++);
+        double dou = 4.0;
+        System.out.printf("%.4f", dou);
     }
 
 }
