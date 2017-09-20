@@ -17,9 +17,9 @@ public class BinarySearchTest2 {
 
         while (left <= right) {
 //            System.out.println("left:" + left + " right:" + right);
-            mid = (right + left) >> 1;
+//            mid = (right + left) >> 1;
 //            System.out.println("*** mid:" + mid);
-//            mid = left + ((right - left) >> 1);
+            mid = left + ((right - left) >> 1);
 //            mid = left + ((right - left) >> 1);
 //            System.out.println("*** mid:" + mid);
 

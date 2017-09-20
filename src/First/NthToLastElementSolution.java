@@ -23,7 +23,7 @@ public class NthToLastElementSolution {
         // write your code here
         ListNode fastNode = head;
         ListNode slowNode = head;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) { // 先走 n 下
             fastNode = fastNode.next;
         }
         while(fastNode != null) {

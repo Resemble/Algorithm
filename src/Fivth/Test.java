@@ -1,5 +1,8 @@
 package Fivth;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+
 /**
  * @author ranran
  * @version V1.0
@@ -21,5 +24,22 @@ public class Test {
         System.out.println(sb.substring(0, sb.length()));
         System.out.println(string2.substring(0, sb.length()));
         System.out.println(string2.substring(0, string2.length()));
+
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.push(1);
+        deque.push(2);
+        deque.add(3);
+        while (!deque.isEmpty()) {
+            System.out.println(deque.pop());
+        }
+
+        String string21 = "000";
+        changeString(string21);
+        System.out.println(string21);
+    }
+
+
+    public static void changeString(String string) {
+        string = "123";
     }
 }

@@ -46,6 +46,20 @@ public class Test {
         System.out.println(++m*n++);
         double dou = 4.0;
         System.out.printf("%.4f", dou);
+
+        int int1 = 1;
+        int int0 = 0;
+//        System.out.println(int1/int0);
+        double double1 = 1.0;
+        double double0 = 0.0;
+//        System.out.println(double1/double0);
+        System.out.println(int1/double0);
+
+        if(int1 > double1) {
+            System.out.println("大于");
+        }else {
+        }
+
     }
 
 }
