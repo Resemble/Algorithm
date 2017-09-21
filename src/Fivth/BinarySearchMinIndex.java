@@ -52,4 +52,34 @@ public class BinarySearchMinIndex {
 //        return (low - 1 >= 0 && (a[low - 1] == key )) ? low - 1 : -1;
         return (high >= 0 && a[high] == key ) ? high : -1;
     }
+
+    // 假设有一个排序的按未知的旋转轴旋转的数组(比如，0 1 2 4 5 6 7 可能成为4 5 6 7 0 1 2)。给定一个目标值进行搜索，
+    // 如果在数组中找到目标值返回数组中的索引位置，否则返回-1。
+    public static int findTarget(int[] a, int target) {
+        int start = 0;
+        int end = a.length - 1;
+        int mid;
+        while(start <= end) {
+            mid = (start + end) / 2;
+            if(a[mid] == target) {
+                return mid;
+            }
+            if(a[start] <= a[mid]) {
+                if(target < a[mid] && target >= a[start]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+            }
+            if(a[mid] <= a[end]) {
+                if(target <= a[end] && target > a[mid]) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+            }
+        }
+        return -1;
+    }
+
 }

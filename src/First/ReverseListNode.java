@@ -33,6 +33,7 @@ public class ReverseListNode {
         listNode2.next = listNode3;
         listNode3.next = listNode4;
         ListNode reverseNode = reverseListNode(listNode);
+//        ListNode reverseNode = reverse2(listNode, null);
 
         while (reverseNode != null) {
             System.out.println(reverseNode.val);
@@ -41,21 +42,28 @@ public class ReverseListNode {
     }
 
     public static ListNode reverseListNode(ListNode head) {
-        ListNode tempHead = head;
         ListNode pre = null;
         ListNode nextNode;
         ListNode reverseHead = null;
-        while (tempHead != null) {
-            nextNode = tempHead.next;
+        while (head != null) {
+            nextNode = head.next;
             if (nextNode == null) {
-                reverseHead = tempHead;
+                reverseHead = head;
             }
-            tempHead.next = pre;
-            pre = tempHead;
-            tempHead = nextNode;
-
+            head.next = pre;
+            pre = head;
+            head = nextNode;
         }
         return reverseHead;
+    }
+
+
+    // 递归反转
+    public static ListNode reverse2(ListNode head, ListNode pre) {
+        ListNode next = head.next;
+        head.next = pre;
+        if(next == null) return head;
+        return reverse2(next, head);
     }
 
 }

@@ -25,13 +25,34 @@ package Fivth;
  */
 public class BackPackVISolution {
 
-    public int backPackVI(int[] nums, int target) {
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 4};
+        int target = 4;
+        System.out.println(backPackVI(nums, target));
+        System.out.println(backPack2(nums, target));
+    }
+
+    // 一维数组从右到左更新
+    public static int backPackVI(int[] nums, int target) {
         // write your code here
 
         int[] dp = new int[target + 1];
         dp[0] = 1;
         for (int i = 1; i <= target; i++) {
             for (int j = 0; j < nums.length; j++) {
+                if (nums[j] <= i) {
+                    dp[i] += dp[i - nums[j]];
+                }
+            }
+        }
+        return dp[target];
+    }
+
+    public static int backPack2(int[] nums, int target) {
+        int[] dp = new int[target + 1];
+        dp[0] = 1; // 一定会实现
+        for (int i = 1; i <= target; i++) {  // 从上往下
+            for (int j = nums.length - 1; j >= 0; j--) {  // 从右往左
                 if (nums[j] <= i) {
                     dp[i] += dp[i - nums[j]];
                 }
