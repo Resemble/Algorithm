@@ -8,7 +8,8 @@ import java.util.List;
  * @version V1.0
  * @Title:
  * @Package eighth
- * @Description:传进去的参数一个是cols, 这个是已经判定好的确保互相不攻击的queens的摆放位置， column是下一个queen要放在哪里的位置， 本题中的所有皇后存放的位置，都是以Column来表示的。这个是前提。
+ * @Description: n皇后问题
+ * 传进去的参数一个是cols, 这个是已经判定好的确保互相不攻击的queens的摆放位置， column是下一个queen要放在哪里的位置， 本题中的所有皇后存放的位置，都是以Column来表示的。这个是前提。
  * 那么换句话说，isValid函数就是用来判断已经放好的这些皇后和下一个要进来的皇后是否会互相攻击.
  *
  * 攻击的判定条件有四个，分别是，同行，同列，两条斜线。
