@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @version V1.0
  * @Title:
  * @Package tenth
- * @Description:
+ * @Description: 378. 有序矩阵中第K小的元素
  * @date 2019-08-18 22:10
  */
 public class KthSmallestSolution {
