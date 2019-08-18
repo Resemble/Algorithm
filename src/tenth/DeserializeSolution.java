@@ -66,6 +66,7 @@ class NestedInteger {
         }
 
         NestedInteger res = new NestedInteger();
+        /** start 开始标识，cnt 判断同一层级 */
         int start = 1, cnt = 0;
         for (int i = 1; i < s.length(); i++) {
             if (cnt == 0 && (s.charAt(i) == ',' || i == s.length() - 1)) {
