@@ -18,7 +18,7 @@ public class BrokenCalcSolution {
                 Y = Y / 2;
             } else {
                 Y = (Y + 1) / 2;
-                count = count + 1;
+                count = count + 2;
             }
         }
         return count + X - Y;
