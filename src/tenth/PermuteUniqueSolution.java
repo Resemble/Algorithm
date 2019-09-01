@@ -1,6 +1,7 @@
 package tenth;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public class PermuteUniqueSolution {
 
     List<List<Integer>> ans = new ArrayList<>();
 
-    public List<List<Integer>> permuteUnique(int[] nums) {
+    public List<List<Integer>> permuteUnique2(int[] nums) {
         dfs(nums, 0);
         return ans;
     }
@@ -55,6 +56,40 @@ public class PermuteUniqueSolution {
     }
 
 
+
+    /** 解法二 */
+    List<List<Integer>> list;
+    public List<List<Integer>> permuteUnique(int[] nums) {
+        list = new ArrayList<>();
+        Arrays.sort(nums);
+        List<Integer> ll = new ArrayList<>();
+        boolean[] flag = new boolean[nums.length];
+        dfs(ll, nums, flag, 0);
+        return list;
+    }
+
+    private void dfs(List<Integer> ll, int[] nums, boolean[] flag, int len) {
+        if(len == nums.length) {
+            list.add(new ArrayList<>(ll));
+            return;
+        }
+        for (int i = 0; i < nums.length; i++) {
+            if (flag[i]) {
+                continue;
+            }
+            /** i-1和i的值相等，且i-1没被用过（之后可能会被用就产生重复） */
+            if (i > 0 && nums[i - 1] == nums[i] && flag[i - 1] == false) {
+                continue;
+            }
+            ll.add(nums[i]);
+            flag[i] = true;
+            dfs(ll, nums, flag, len + 1);
+            ll.remove(ll.size() - 1);
+            flag[i] = false;
+        }
+    }
+
+
     public static void main(String[] args) {
         ArrayList<Integer> arrayList = new ArrayList<>();
         arrayList.add(1);
@@ -63,6 +98,7 @@ public class PermuteUniqueSolution {
         if (arrayList.equals(arrayList2)) {
             System.out.println("equal");
         }
+
     }
 
 }
