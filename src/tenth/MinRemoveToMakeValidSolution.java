@@ -22,12 +22,12 @@ public class MinRemoveToMakeValidSolution {
                 if (stack.size() > 0) {
                     stack.pop();
                 } else {
-                    builder.replace(i, i + 1, " ");
+                    builder.replace(i, i + 1, "#");
                 }
             }
         }
 
-        s = builder.toString().replaceAll(" ", "");
+        s = builder.toString().replaceAll("#", "");
         if (stack.size() == 0) {
             return s;
         }
@@ -40,11 +40,11 @@ public class MinRemoveToMakeValidSolution {
                 if (stack.size() > 0) {
                     stack.pop();
                 } else {
-                    builder.replace(i, i + 1, " ");
+                    builder.replace(i, i + 1, "#");
                 }
             }
         }
-        return builder.toString().replaceAll(" ", "");
+        return builder.toString().replaceAll("#", "");
     }
 
     public static void main(String[] args) {
