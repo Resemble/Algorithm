@@ -47,6 +47,46 @@ public class MinRemoveToMakeValidSolution {
         return builder.toString().replaceAll("#", "");
     }
 
+    /***
+     * @title minRemoveToMakeValid2
+     * @description 更好的版本
+     * @param: s
+     * @updateTime 2020-03-01 18:28
+     * @return java.lang.String
+     */
+    public static String minRemoveToMakeValid2(String s) {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+        int n = s.length();
+        Stack<Integer> stack = new Stack<>();
+        int[] removeArr = new int[n];
+        for (int i = 0; i < n; i++) {
+            char c = s.charAt(i);
+            if (c == '(') {
+                stack.push(i);
+            } else if (c == ')') {
+                if (!stack.empty()) {
+                    stack.pop();
+                } else {
+                    removeArr[i] = 1;
+                }
+            }
+        }
+        while (!stack.empty()) {
+            removeArr[stack.pop()] = 1;
+        }
+
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < n; i++) {
+            if (removeArr[i] == 0) {
+                builder.append(s.charAt(i));
+            }
+        }
+        return builder.toString();
+    }
+
+
     public static void main(String[] args) {
         String s = "lee(t(c)o)de)";
         System.out.println(minRemoveToMakeValid(s));
