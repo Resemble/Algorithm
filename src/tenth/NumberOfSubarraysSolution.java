@@ -13,11 +13,41 @@ import java.util.List;
  */
 public class NumberOfSubarraysSolution {
 
-
+    /** 前缀和解法 */
     public int numberOfSubarrays(int[] nums, int k) {
+        // 数组 prefixCnt 的下标是前缀和（即当前奇数的个数），值是前缀和的个数
+        int[] prefixCnt = new int[nums.length + 1];
+        // 多算一个 1
+        prefixCnt[0] = 1;
+        // 遍历原数组，计算当前的前缀和，统计到 prefixCnt 数组中
+        // 并且在 res 中累加上与当前前缀和差值为 k 的前缀和的个数
+        int res = 0, index = 0;
+        for (int num : nums) {
+            /** num & 1 奇数则为1 */
+//            index += num & 1;
+            if (num % 2 == 1) {
+                index++;
+            }
+            /** sum:0,1,2,3 prefixCnt[sum] 记录前面有多少个数 */
+            prefixCnt[index]++;
+            if (index >= k) {
+                res += prefixCnt[index - k];
+                System.out.println("res:" + res);
+            }
+        }
+//        for (int i = 0; i < prefixCnt.length; i++) {
+//            System.out.println("prefixCnt[" + i + "]:" + prefixCnt[i]);
+//        }
+        return res;
+    }
+
+
+
+        /** 滑动窗口解法 */
+    public int numberOfSubarrays3(int[] nums, int k) {
         List<Integer> oddList = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] % 2 == 1) {
+            if ((nums[i] & 1) == 1) {
                 oddList.add(i);
             }
         }
