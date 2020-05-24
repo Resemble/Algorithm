@@ -38,6 +38,7 @@ public class MaxSubArraySolution {
             if (accSum > 0) {
                 accSum += nums[i];
             } else {
+                // 小于0时等于当前的值
                 accSum = nums[i];
             }
             max = Math.max(max, accSum);
