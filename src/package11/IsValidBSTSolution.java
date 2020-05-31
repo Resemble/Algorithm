@@ -73,10 +73,13 @@ public class IsValidBSTSolution {
                 return new Result(Integer.MIN_VALUE, Integer.MAX_VALUE, false);
             }
         }
-        return new Result(Math.max(Math.max(leftIsValidBST.max, rightIsValidBST.max), root.val), Math.min(Math.min(leftIsValidBST.min, rightIsValidBST.min), root.val), leftIsValidBST.isValid && rightIsValidBST.isValid);
+        return new Result(Math.max(Math.max(leftIsValidBST.max, rightIsValidBST.max), root.val),
+            Math.min(Math.min(leftIsValidBST.min, rightIsValidBST.min), root.val),
+            leftIsValidBST.isValid && rightIsValidBST.isValid);
     }
 
     long last = Long.MIN_VALUE;
+
     // 中序遍历升序
     public boolean isValidBST(TreeNode root) {
         if (root == null) {
@@ -91,9 +94,24 @@ public class IsValidBSTSolution {
         return false;
     }
 
+    public boolean isValidBST3(TreeNode root) {
+        return validate(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+
+    public boolean validate(TreeNode node, long min, long max) {
+        if (node == null) {
+            return true;
+        }
+        if (node.val <= min || node.val >= max) {
+            return false;
+        }
+        return validate(node.left, min, node.val) && validate(node.right, node.val, max);
+    }
+
+
     public static void main(String[] args) {
         System.out.println(Double.MIN_VALUE);
-        System.out.println( -Double.MAX_VALUE);
+        System.out.println(-Double.MAX_VALUE);
     }
 
 }
