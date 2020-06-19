@@ -23,4 +23,23 @@ public class DeleteNodeSolution {
         node.next = node.next.next;
     }
 
+    public static void main(String[] args) {
+        ListNode listNode1 = new ListNode(3);
+        ListNode listNode2 = new ListNode(3);
+        ListNode listNode3 = new ListNode(4);
+        listNode1.next = listNode3;
+        if (listNode1.equals(listNode2)) {
+            System.out.println("相等");
+        } else {
+            System.out.println("不相等");
+        }
+
+        if (listNode1 == listNode2) {
+            System.out.println("== 相等");
+        } else {
+            System.out.println("== 不相等");
+        }
+
+    }
+
 }
