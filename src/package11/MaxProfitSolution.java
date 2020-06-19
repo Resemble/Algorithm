@@ -11,7 +11,18 @@ package package11;
  */
 public class MaxProfitSolution {
 
+
     public int maxProfit(int[] prices) {
+        int buy = Integer.MIN_VALUE;
+        int sell = 0;
+        for (int i = 0; i < prices.length; i++) {
+            buy = Math.max(buy, -prices[i]);
+            sell = Math.max(sell, buy + prices[i]);
+        }
+        return sell;
+    }
+
+    public int maxProfit2(int[] prices) {
         int min = Integer.MAX_VALUE;
         int maxProfitValue = 0;
         for (int i = 0; i < prices.length; i++) {
