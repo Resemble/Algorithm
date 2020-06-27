@@ -11,7 +11,7 @@ package package11;
  */
 public class LongestPalindromeSolution {
 
-    public String longestPalindrome(String s) {
+    public String longestPalindrome2(String s) {
         int len = s.length();
         if (len < 2) {
             return s;
@@ -41,6 +41,41 @@ public class LongestPalindromeSolution {
                 }
             }
 
+        }
+        return s.substring(begin, begin + maxLen);
+    }
+
+
+    public String longestPalindrome(String s) {
+        int len = s.length();
+        if (len < 2) {
+            return s;
+        }
+        int maxLen = 1;
+        int begin = 0;
+        // dp[i][j] 表示 s[i, j] 是否是回文串
+        boolean[][] dp = new boolean[len][len];
+        char[] charArray = s.toCharArray();
+
+        // dp[i][j] 1, 2, 3
+        for (int tempLen = 0; tempLen < len; tempLen++) {
+            for (int i = 0; i + tempLen < len; i++) {
+                if (tempLen == 0) {
+                    dp[i][i + tempLen] = true;
+                } else if (charArray[i] == charArray[i + tempLen]) {
+                    if (tempLen == 1) {
+                        dp[i][i + tempLen] = true;
+                    } else {
+                        dp[i][i + tempLen] = dp[i + 1][i + tempLen - 1];
+                    }
+                } else {
+                    dp[i][i + tempLen] = false;
+                }
+                if (dp[i][i + tempLen] && (tempLen + 1) > maxLen) {
+                    maxLen = tempLen + 1;
+                    begin = i;
+                }
+            }
         }
         return s.substring(begin, begin + maxLen);
     }
