@@ -1,0 +1,27 @@
+package week.week200;
+
+/**
+ * @author ranbo
+ * @version V1.0
+ * @Title:
+ * @Package week.week200
+ * @Description:
+ * @date 2020-08-02 10:32
+ */
+public class CountGoodTripletsSolution {
+
+    public int countGoodTriplets(int[] arr, int a, int b, int c) {
+        int cnt = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = i + 1; j < arr.length; j++) {
+                for (int k = j + 1; k < arr.length; k++) {
+                   if (Math.abs(arr[i] - arr[j]) <= a && Math.abs(arr[j] - arr[k]) <= b && Math.abs(arr[i] - arr[k]) <= c) {
+                       cnt++;
+                   }
+                }
+            }
+        }
+        return cnt;
+    }
+
+}
